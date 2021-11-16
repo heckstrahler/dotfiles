@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/etc/cron.daily'
+let g:netrw_dirhist_2='/etc/cron.hourly'
+let g:netrw_dirhist_3='/etc'
+let g:netrw_dirhist_4='/home/heckstrahler'
+let g:netrw_dirhist_5='/home'
+let g:netrw_dirhist_6='/'
+let g:netrw_dirhist_7='/home'
+let g:netrw_dirhist_8='/home/heckstrahler'
+let g:netrw_dirhist_9='/home/heckstrahler/.vim'
