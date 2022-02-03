@@ -26,14 +26,14 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec
 
 ### Output configuration
 #bottom
-set $samsung HDMI-A-1
-set $benq DP-4
-set $medionrightbot DP-5
+set $botleft DP-4
+set $botmid DP-1
+set $botright HDMI-A-1
 
 #top
-set $eizoLeft DP-6
-set $eizoMid DP-1
-set $medionrighttop DP-2
+set $topleft DP-6
+set $topmid DP-2
+set $topright DP-5
 
 
 #set $AppleCRT 'Rogen Tech Distribution Inc 1905 S1 644AD02402209'
@@ -47,12 +47,16 @@ set $medionrighttop DP-2
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # bottom
-output $benq bg /home/heckstrahler/Sync/97596_devushka_tatuirovka_spina_volosy_sheya_ukrashenie_3000x2000_\(www.GdeFon.ru\).jpg fill
+output $botleft bg /home/heckstrahler/Sync/Pictures/5b30d9df48ad7927cf1b607312c6c1d0c476445a.png center
+
+output $botright bg /home/heckstrahler/Sync/w2ue9oda9ah31.png fill
+
+output $botmid bg /home/heckstrahler/Sync/97596_devushka_tatuirovka_spina_volosy_sheya_ukrashenie_3000x2000_\(www.GdeFon.ru\).jpg fill
 
 #top
-output $eizoMid bg /home/heckstrahler/Sync/KHqPlFd.jpg fill
+output $topmid bg /home/heckstrahler/Sync/KHqPlFd.jpg fill
 
-
+output $topright bg /home/heckstrahler/Sync/w2ue9oda9ah31.png fill
 
 output $AppleCRT bg /home/heckstrahler/Sync/w2ue9oda9ah31.png fill
 
@@ -63,20 +67,23 @@ output $AppleCRT bg /home/heckstrahler/Sync/w2ue9oda9ah31.png fill
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 # bottom
-output $samsung   position 0 1200
+output $botleft   position 0 1200
 
-output $benq      position 1920 1200
+output $botright  position 5760 1200
 
-output $medionrightbot  position 3840 1200
+output $botmid      position 1920 1200
+output $botmid scale 1
+output $botmid mode 3840x2160@119.999Hz
+output $botmid adaptive_sync on
 
 #top
-output $eizoLeft  position 0 0
-output $eizoLeft  transform 180
+output $topleft  position 0 0
+output $topleft  transform 180
 
-output $eizoMid   position 1920 0
-output $eizoMid   transform 180
+output $topmid   position 1920 0
+output $topmid   transform 180
 
-output $medionrighttop  position 3840 176
+output $topright  position 3840 176
 
 #output $upLeft      position -480 600
 #output $upLeft      mode --custom 640x480@80Hz    
@@ -162,26 +169,26 @@ input "1390:268:ELECOM_TrackBall_Mouse_HUGE_TrackBall" {
        pointer_accel -0.9
 }
 
-workspace 1 output $benq
-workspace 2 output $benq
-workspace 3 output $eizoMid
-workspace 4 output $medionrightbot
-workspace 5 output $benq
-workspace 6 output $samsung
-workspace 7 output $eizoLeft
-workspace 8 output $eizoLeft
-workspace 9 output $samsung
-workspace 10 output $medionrightbot
-workspace 11 output $benq
-workspace 12 output $benq
-workspace 13 output $eizoMid
-workspace 14 output $medionrightbot
-workspace 15 output $benq
-workspace 16 output $samsung
-workspace 17 output $eizoLeft
-workspace 18 output $eizoLeft
-workspace 19 output $medionrighttop
-workspace 20 output $medionrightbot
+workspace 1 output $botmid
+workspace 2 output $botmid
+workspace 3 output $topmid
+workspace 4 output $botright
+workspace 5 output $botmid
+workspace 6 output $botleft
+workspace 7 output $topleft
+workspace 8 output $topleft
+workspace 9 output $botleft
+workspace 10 output $botright
+workspace 11 output $botmid
+workspace 12 output $botmid
+workspace 13 output $topmid
+workspace 14 output $botright
+workspace 15 output $botmid
+workspace 16 output $botleft
+workspace 17 output $topleft
+workspace 18 output $topleft
+workspace 19 output $topright
+workspace 20 output $botright
 
 assign [app_id="firefoxdeveloperedition"] workspace 3
 assign [app_id="firefox"] workspace 2
@@ -216,7 +223,7 @@ bindsym $mod+p                  exec grim $(date +'%Y-%m-%d-%H%M%S_grim.png')
 bindsym --release $mod+Shift+p	exec grim -g "$(slurp)" $(date +'%Y-%m-%d-%H%M%S_grim.png')
 bindsym $mod+Shift+x            exec --no-startup-id swaylock --color "#1f222d"
 bindsym $mod+c                  exec --no-startup-id "xfce4-terminal -e python"
-bindsym $mod+b                  exec --no-startup-id signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland
+bindsym $mod+b                  exec --no-startup-id signal-desktop --enable-features=UseOzonePlatform
 bindsym $mod+n                  exec --no-startup-id GDK_BACKEND=wayland firefox
 bindsym $mod+Shift+n            exec --no-startup-id GDK_BACKEND=wayland firefox-developer-edition
 #bindsym $mod+n                  exec --no-startup-id firefox
@@ -407,15 +414,27 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    #status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-    #status_command bumblebee-status -m memory nic battery cpu sensors amixer time -p time.format="%H:%M:%S" -t gruvbox-powerline
     status_command i3status
-
+    output DP-1
+    font pango:SFNS Display Regular 12
     colors {
-        separator $base03
+      separator $base03
+      background $base01
+      statusline $base05
+        #                border  background text
+      focused_workspace  $base01 $base01    $base07
+      active_workspace   $base01 $base02    $base03
+      inactive_workspace $base01 $base01    $base03
+      urgent_workspace   $base01 $base01    $base08
+    }
+}
+
+bar {
+    position top
+    status_command i3status
+    output DP-2
+    colors {
+      separator $base03
       background $base01
       statusline $base05
         #                border  background text
