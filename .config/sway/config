@@ -415,8 +415,8 @@ bindsym $mod+r mode "resize"
 bar {
     position top
     status_command i3status
-    output DP-1
-    font pango:SFNS Display Regular 12
+    output $botmid
+    font pango:SFNS Display Regular 13
     colors {
       separator $base03
       background $base01
@@ -432,7 +432,72 @@ bar {
 bar {
     position top
     status_command i3status
-    output DP-2
+    output $topmid
+    colors {
+      separator $base03
+      background $base01
+      statusline $base05
+        #                border  background text
+      focused_workspace  $base01 $base01    $base07
+      active_workspace   $base01 $base02    $base03
+      inactive_workspace $base01 $base01    $base03
+      urgent_workspace   $base01 $base01    $base08
+    }
+}
+
+bar {
+    position top
+    status_command i3status
+    output $botright
+    colors {
+      separator $base03
+      background $base01
+      statusline $base05
+        #                border  background text
+      focused_workspace  $base01 $base01    $base07
+      active_workspace   $base01 $base02    $base03
+      inactive_workspace $base01 $base01    $base03
+      urgent_workspace   $base01 $base01    $base08
+    }
+}
+
+bar {
+    position top
+    status_command i3status
+    output $topright
+    colors {
+      separator $base03
+      background $base01
+      statusline $base05
+        #                border  background text
+      focused_workspace  $base01 $base01    $base07
+      active_workspace   $base01 $base02    $base03
+      inactive_workspace $base01 $base01    $base03
+      urgent_workspace   $base01 $base01    $base08
+    }
+}
+
+bar {
+    position top
+    status_command i3status
+    output $botleft
+    colors {
+      separator $base03
+      background $base01
+      statusline $base05
+        #                border  background text
+      focused_workspace  $base01 $base01    $base07
+      active_workspace   $base01 $base02    $base03
+      inactive_workspace $base01 $base01    $base03
+      urgent_workspace   $base01 $base01    $base08
+    }
+}
+
+bar {
+    position top
+    status_command i3status
+    output $topleft
+    font pango:SFNS Display Regular 12
     colors {
       separator $base03
       background $base01
