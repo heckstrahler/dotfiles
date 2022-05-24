@@ -1,0 +1,120 @@
+* {
+    :q
+    border: none;
+    border-radius: 0;
+    font-family: SFNS Display Regular;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: #1f222d;
+    border-bottom: 0px solid rgba(100, 114, 125, 0.5);
+    color: white;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button {
+    padding: 0 2px;
+    background: transparent;
+    color: #7780a1;
+    border-bottom: 0px solid transparent;
+}
+
+#workspaces button.focused {
+    background: #252936;
+    border-bottom: 0px solid white;
+    color: #ffffff;
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#clock, #battery, #cpu, #memory, #backlight, #network, #pulseaudio, #custom-spotify, #tray, #mode, #idle_inhibitor, #temperature, #temperature.critical{
+    padding: 0 5px;
+    margin: 0 0px;
+}
+
+#clock {
+    background-color: #1f222d;
+}
+
+#battery {
+    background-color: #ffffff;
+    color: black;
+}
+
+#battery.charging {
+    color: white;
+    background-color: #26A65B;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background: #f53c3c;
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+    background: #1f222d;
+}
+
+#memory {
+    background: #1f222d;
+}
+
+#backlight {
+    background: #90b1b1;
+}
+
+#network {
+    color: #00f80e;
+}
+
+#network.disconnected {
+    background: #f53c3c;
+}
+
+#pulseaudio {
+    background: #f1c40f;
+    color: black;
+}
+
+#pulseaudio.muted {
+    background: #90b1b1;
+    color: #2a5c45;
+}
+
+#custom-spotify {
+    background: #66cc99;
+    color: #2a5c45;
+}
+
+#tray {
+    background-color: #1f222d;
+}
+
+#idle_inhibitor {
+    background-color: #2d3436;
+}
+
+#temperature {
+    background-color: #2d3436;
+}
+
+#temperature.critical {
+    background-color: #2d3436;
+}

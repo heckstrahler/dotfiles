@@ -3,8 +3,8 @@
      "position": "top", // Waybar at the bottom of your screen
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/spotify"],
-    "modules-center": [""],
-    "modules-right": ["network", "memory", "temperature", "cpu", "clock", "tray"],
+    "modules-center": ["cpu"],
+    "modules-right": ["network", "memory", "disk", "temperature", "clock", "tray"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -46,7 +46,8 @@
     },
     "cpu": {
         "interval": 1,
-        "format": "{load} | {usage}% |"
+        "format": "{load} | {usage}% | {avg_frequency}/{min_frequency}/{max_frequency} | {icon0} {icon1} {icon2} {icon3} {icon4} {icon5} {icon6} {icon7} {icon8} {icon9} {icon10} {icon11} {icon12} {icon13} {icon14} {icon15} |",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
     },
     "memory": {
         "format": "{used:0.1f}G | {avail:0.1f}G |",
