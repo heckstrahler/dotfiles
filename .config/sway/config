@@ -223,7 +223,7 @@ bindsym $mod+p                  exec grim $(date +'%Y-%m-%d-%H%M%S_grim.png')
 bindsym --release $mod+Shift+p	exec grim -g "$(slurp)" $(date +'%Y-%m-%d-%H%M%S_grim.png')
 bindsym $mod+Shift+x            exec --no-startup-id swaylock --color "#1f222d"
 bindsym $mod+c                  exec --no-startup-id "xfce4-terminal -e python"
-bindsym $mod+b                  exec --no-startup-id signal-desktop --enable-features=UseOzonePlatform
+bindsym $mod+b                  exec --no-startup-id signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland
 bindsym $mod+n                  exec --no-startup-id GDK_BACKEND=wayland firefox
 bindsym $mod+Shift+n            exec --no-startup-id GDK_BACKEND=wayland firefox-developer-edition
 #bindsym $mod+n                  exec --no-startup-id firefox
@@ -247,6 +247,7 @@ bindsym $mod+Shift+Left         exec --no-startup-id mocp -k -10
 bindsym $mod+Shift+Down         exec light -U 50
 bindsym $mod+Shift+Up           exec light -A 10
 bindsym $mod+Shift+Right        exec --no-startup-id mocp -k 10
+bindsym $mod+insert             exec killall deadcells
 
 
 
@@ -497,7 +498,6 @@ bar {
     position top
     status_command i3status
     output $topleft
-    font pango:SFNS Display Regular 12
     colors {
       separator $base03
       background $base01

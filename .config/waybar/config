@@ -1,0 +1,108 @@
+{
+    "layer": "top", // Waybar at top layer
+     "position": "top", // Waybar at the bottom of your screen
+    // Choose the order of the modules
+    "modules-left": ["sway/workspaces", "sway/mode", "custom/spotify"],
+    "modules-center": [""],
+    "modules-right": ["network", "memory", "temperature", "cpu", "clock", "tray"],
+    // Modules configuration
+    // "sway/workspaces": {
+    //     "disable-scroll": true,
+    //     "all-outputs": true,
+    //     "format": "{name}: {icon}",
+    //     "format-icons": {
+    //         "1": "",
+    //         "2": "",
+    //         "3": "",
+    //         "4": "",
+    //         "5": "",
+    //         "urgent": "",
+    //         "focused": "",
+    //         "default": ""
+    //     }
+    // },
+    "disk": {
+        "format": "{free} |"
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:%Y-%m-%d %H:%M:%S}",
+        "tooltip-format": "{:%Y-%m-%d | %H:%M}",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "interval": 1,
+        "format": "{load} | {usage}% |"
+    },
+    "memory": {
+        "format": "{used:0.1f}G | {avail:0.1f}G |",
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", ""]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        "interval": 1,
+        // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "format-wifi": "W: {ipaddr} ({signalStrength}%at {essid})",
+        "format-ethernet": "D:{bandwidthDownBits} U:{bandwidthUpBits} E: {ipaddr}",
+        "format-disconnected": "Disconnected ⚠"
+    },
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/spotify": {
+        "format": " {}",
+        "max-length": 40,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+    },
+    "temperature": {
+	    "thermal-zone": 2,
+	    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+	    "critical-threshold": 80,
+	    "format-critical": "{temperatureC}°C ",
+	    "format": "{temperatureC}°C "
+    }
+}
