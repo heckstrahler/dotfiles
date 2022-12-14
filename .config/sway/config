@@ -58,7 +58,7 @@ output $topmid bg /home/heckstrahler/Sync/KHqPlFd.jpg fill
 
 output $topright bg /home/heckstrahler/Sync/w2ue9oda9ah31.png fill
 
-output $AppleCRT bg /home/heckstrahler/Sync/w2ue9oda9ah31.png fill
+output $topleft bg /home/heckstrahler/Sync/w2ue9oda9ah31.png fill
 
 #
 # Example configuration:
