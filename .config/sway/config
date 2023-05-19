@@ -198,7 +198,7 @@ assign [app_id="thunderbird"] workspace 4
 assign [app_id="libreoffice-startcenter"] workspace 8
 assign [app_id="nemo"] workspace 9
 assign [app_id="org.keepassxc.KeePassXC"] workspace 10
-assign [app_id="Signal"] workspace 14
+assign [app_id="signal"] workspace 14
 
 ### Autostart
 exec --no-startup-id redshift -l 49.87:8.65 -t 6500:3700
