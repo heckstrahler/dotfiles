@@ -26,13 +26,16 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec
 
 ### Output configuration
 #bottom
-set $botleft DP-4
+#set $botleft DP-4
+set $botleft HDMI-A-2
 set $botmid DP-1
 set $botright HDMI-A-1
 
 #top
-set $topleft DP-6
-set $topmid DP-2
+#set $topleft DP-6
+set $topleft DP-7
+#set $topmid DP-2
+set $topmid DP-8
 set $topright DP-5
 
 
@@ -72,8 +75,8 @@ output $botleft   position 0 1200
 output $botright  position 5760 1200
 
 output $botmid      position 1920 1200
-output $botmid scale 1
-output $botmid mode 3840x2160@119.999Hz
+output $botmid scale 1.33
+output $botmid mode 3840x2160@144Hz
 output $botmid adaptive_sync on
 
 #top
@@ -223,7 +226,8 @@ bindsym $mod+p                  exec grim $(date +'%Y-%m-%d-%H%M%S_grim.png')
 bindsym --release $mod+Shift+p	exec grim -g "$(slurp)" $(date +'%Y-%m-%d-%H%M%S_grim.png')
 bindsym $mod+Shift+x            exec --no-startup-id swaylock --color "#1f222d"
 bindsym $mod+c                  exec --no-startup-id "xfce4-terminal -e python"
-bindsym $mod+b                  exec --no-startup-id signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland
+#bindsym $mod+b                  exec --no-startup-id signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland
+bindsym $mod+b                  exec --no-startup-id signal-desktop
 bindsym $mod+n                  exec --no-startup-id GDK_BACKEND=wayland firefox
 bindsym $mod+Shift+n            exec --no-startup-id GDK_BACKEND=wayland firefox-developer-edition
 #bindsym $mod+n                  exec --no-startup-id firefox
@@ -417,7 +421,7 @@ bar {
     position top
     status_command i3status
     output $botmid
-    font pango:SFNS Display Regular 13
+    font pango:SFNS Display Regular 9
     colors {
       separator $base03
       background $base01
