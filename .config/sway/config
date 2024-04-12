@@ -52,7 +52,7 @@ set $topright DP-5
 # bottom
 output $botleft bg /home/heckstrahler/Sync/Pictures/5b30d9df48ad7927cf1b607312c6c1d0c476445a.png center
 
-output $botright bg /home/heckstrahler/Sync/w2ue9oda9ah31.png fill
+output $botright bg /home/heckstrahler/Sync/Pictures/wallpaper/desktop-background-collection-6-v0-7ckpfm4hw0tc1.webp fill
 
 output $botmid bg /home/heckstrahler/Sync/97596_devushka_tatuirovka_spina_volosy_sheya_ukrashenie_3000x2000_\(www.GdeFon.ru\).jpg fill
 
@@ -61,7 +61,7 @@ output $topmid bg /home/heckstrahler/Sync/KHqPlFd.jpg fill
 
 output $topright bg /home/heckstrahler/Sync/w2ue9oda9ah31.png fill
 
-output $topleft bg /home/heckstrahler/Sync/w2ue9oda9ah31.png fill
+output $topleft bg /home/heckstrahler/Sync/Pictures/wallpaper/desktop-background-collection-6-v0-hxzc17tbw0tc1.webp fill
 
 #
 # Example configuration:
@@ -72,7 +72,8 @@ output $topleft bg /home/heckstrahler/Sync/w2ue9oda9ah31.png fill
 # bottom
 output $botleft   position 0 1200
 
-output $botright  position 5760 1200
+#output $botright  position 5760 1200
+output $botright  position 4803 1200
 
 output $botmid      position 1920 1200
 output $botmid scale 1.33
